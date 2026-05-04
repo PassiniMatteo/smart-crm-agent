@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "VTENext AI Assistant",
+  "version": "1.0",
+  "description": "Registra l'audio, formatta con AI e compila la soluzione del ticket",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://crm.esolver.cloud/*",
+    "https://*.tuodominio.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Apri Assistente AI"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://crm.esolver.cloud/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
